@@ -11,116 +11,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="canonical" href="https://ggkt0r.github.io/GGKT0R/">
+  <meta name="theme-color" content="#040308">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GGKTOR // CyberSecurity & SecAI Engineer">
+  <meta property="og:description" content="Vulnerability Management, automatización SecOps y Seguridad en IA (SecAI). Portafolio y base de conocimiento.">
+  <meta property="og:url" content="https://ggkt0r.github.io/GGKT0R/">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            mono: ['"JetBrains Mono"', 'monospace'],
-            sans: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            cyber: {
-              black: '#040308',
-              surface: '#0a0814',
-              card: '#120d24',
-              cardHover: '#181230',
-              border: '#2e1c57',
-              neonPurple: '#c084fc',
-              purpleCore: '#9333ea',
-              purpleGlow: '#a855f7',
-              deepPurple: '#581c87',
-              accentCyan: '#38bdf8',
-              alertRed: '#f43f5e',
-              statusGreen: '#10b981'
-            }
-          },
-          boxShadow: {
-            'neon-purple': '0 0 20px -3px rgba(168, 85, 247, 0.45)',
-            'neon-purple-lg': '0 0 35px -2px rgba(147, 51, 234, 0.55)',
-            'neon-border': 'inset 0 0 12px rgba(168, 85, 247, 0.25)',
-          },
-          backgroundImage: {
-            'grid-pattern': "radial-gradient(rgba(147, 51, 234, 0.18) 1px, transparent 1px)",
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Lucide Icons (versión fijada) -->
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 
-  <style>
-    /* Efectos Scanline y Grid Cyberpunk */
-    body {
-      background-color: #040308;
-      background-size: 24px 24px;
-      color: #e2e8f0;
-    }
-
-    .cyber-scanline {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      background: linear-gradient(rgba(18, 16, 26, 0) 50%, rgba(0, 0, 0, 0.28) 50%), 
-                  linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-      background-size: 100% 3px, 6px 100%;
-      z-index: 99;
-      opacity: 0.75;
-    }
-
-    .corner-bracket {
-      position: relative;
-    }
-    .corner-bracket::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border-top: 2px solid #a855f7;
-      border-left: 2px solid #a855f7;
-    }
-    .corner-bracket::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 10px;
-      height: 10px;
-      border-bottom: 2px solid #a855f7;
-      border-right: 2px solid #a855f7;
-    }
-
-    /* Terminal blinking cursor */
-    .cursor-blink {
-      animation: blink 1s step-end infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #040308;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #581c87;
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #9333ea;
-    }
-  </style>
+  <!-- Tailwind CSS CDN (versión fijada) + configuración compartida -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="assets/js/tw-config.js"></script>
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="bg-cyber-black text-slate-200 font-sans min-h-screen flex flex-col relative overflow-x-hidden">
 
@@ -180,6 +87,10 @@
           <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyber-neonPurple"></i>
           SecAI
         </a>
+        <a href="conceptos/" class="px-4 py-2 rounded-lg font-mono text-xs font-medium transition-all duration-200 flex items-center gap-2 text-slate-400 hover:text-white">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          Conceptos
+        </a>
       </nav>
 
       <!-- Action Button (CV & Terminal) -->
@@ -188,7 +99,7 @@
           <i data-lucide="command" class="w-3.5 h-3.5 text-cyber-neonPurple"></i>
           HUD CLI
         </button>
-        <a href="CV_GGKTOR.pdf" target="_blank" class="px-4 py-2 rounded-lg bg-cyber-purpleCore hover:bg-cyber-purpleGlow text-white text-xs font-mono font-bold tracking-wide shadow-neon-purple transition-all flex items-center gap-2">
+        <a href="#" data-profile="cv" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-cyber-purpleCore hover:bg-cyber-purpleGlow text-white text-xs font-mono font-bold tracking-wide shadow-neon-purple transition-all flex items-center gap-2">
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           Descargar CV
         </a>
@@ -206,8 +117,9 @@
       <a href="#vuln-mgmt" class="mobile-nav-link block py-2 px-3 rounded hover:bg-cyber-card text-slate-300"># 02 // Vulnerability Management</a>
       <a href="#automation" class="mobile-nav-link block py-2 px-3 rounded hover:bg-cyber-card text-slate-300"># 03 // Automatización & Scripting</a>
       <a href="#secai" class="mobile-nav-link block py-2 px-3 rounded hover:bg-cyber-card text-cyber-neonPurple font-bold"># 04 // SecAI (Seguridad en IA)</a>
+      <a href="conceptos/" class="block py-2 px-3 rounded hover:bg-cyber-card text-slate-300"># 05 // Conceptos aprendidos</a>
       <div class="pt-3 border-t border-cyber-border flex flex-col gap-2">
-        <a href="CV_GGKTOR.pdf" target="_blank" class="w-full text-center py-2 bg-cyber-purpleCore text-white rounded font-mono text-xs">Descargar CV (PDF)</a>
+        <a href="#" data-profile="cv" target="_blank" rel="noopener" class="w-full text-center py-2 bg-cyber-purpleCore text-white rounded font-mono text-xs">Descargar CV (PDF)</a>
       </div>
     </div>
   </header>
@@ -226,7 +138,7 @@
     </div>
     <div class="px-4 py-3 bg-cyber-card border-t border-cyber-border flex items-center gap-2">
       <span class="text-cyber-neonPurple font-bold">&gt;</span>
-      <input type="text" id="cliInput" placeholder="Escribe un comando (ej: skills, vulns, secai, contact)..." class="bg-transparent w-full text-white focus:outline-none font-mono text-xs">
+      <input type="text" id="cliInput" placeholder="Escribe un comando (ej: help, concepts, whoami)..." class="bg-transparent w-full text-white focus:outline-none font-mono text-xs">
     </div>
   </div>
 
@@ -370,6 +282,23 @@
         </div>
       </div>
 
+      <!-- Knowledge Base teaser -->
+      <a href="conceptos/" class="group block bg-gradient-to-r from-cyber-card via-cyber-surface to-cyber-card border border-cyber-border hover:border-cyber-neonPurple rounded-2xl p-6 sm:p-8 transition corner-bracket">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 shrink-0 rounded-xl bg-cyber-deepPurple/50 border border-cyber-purpleCore flex items-center justify-center text-cyber-neonPurple">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-cyber-neonPurple tracking-widest">// MODULE 05 · KNOWLEDGE BASE</span>
+              <h2 class="text-xl font-bold text-white mt-1 group-hover:text-cyber-neonPurple transition">Conceptos aprendidos</h2>
+              <p class="text-slate-400 text-sm mt-1 max-w-2xl">Notas técnicas sobre lo que voy estudiando y aplicando: qué es, por qué importa, un ejemplo práctico y referencias.</p>
+            </div>
+          </div>
+          <span class="font-mono text-xs text-cyber-neonPurple font-semibold flex items-center gap-2 shrink-0">ABRIR BITÁCORA <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></span>
+        </div>
+      </a>
+
       <!-- Sección de Contacto Directo & Links -->
       <div class="bg-cyber-surface border border-cyber-border rounded-2xl p-8 text-center space-y-6">
         <h3 class="text-2xl font-bold text-white font-sans">¿Listo para auditar o robustecer la infraestructura?</h3>
@@ -377,13 +306,13 @@
           Disponible para proyectos de consultoría, operaciones de seguridad (SecOps) y diseño de defensas para sistemas potenciados con IA.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:tu-correo@ejemplo.com" class="px-6 py-3 bg-cyber-purpleCore hover:bg-cyber-purpleGlow text-white font-mono text-xs rounded-xl transition flex items-center gap-2 shadow-neon-purple">
+          <a href="#" data-profile="email" class="px-6 py-3 bg-cyber-purpleCore hover:bg-cyber-purpleGlow text-white font-mono text-xs rounded-xl transition flex items-center gap-2 shadow-neon-purple">
             <i data-lucide="mail" class="w-4 h-4"></i> Enviar Mensaje
           </a>
-          <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="px-6 py-3 bg-cyber-card hover:bg-cyber-cardHover border border-cyber-border text-slate-200 font-mono text-xs rounded-xl transition flex items-center gap-2">
+          <a href="#" data-profile="linkedin" target="_blank" rel="noopener" class="px-6 py-3 bg-cyber-card hover:bg-cyber-cardHover border border-cyber-border text-slate-200 font-mono text-xs rounded-xl transition flex items-center gap-2">
             <i data-lucide="linkedin" class="w-4 h-4 text-cyber-accentCyan"></i> LinkedIn
           </a>
-          <a href="https://github.com/tu-usuario" target="_blank" class="px-6 py-3 bg-cyber-card hover:bg-cyber-cardHover border border-cyber-border text-slate-200 font-mono text-xs rounded-xl transition flex items-center gap-2">
+          <a href="https://github.com/GGKT0R" data-profile="github" target="_blank" rel="noopener" class="px-6 py-3 bg-cyber-card hover:bg-cyber-cardHover border border-cyber-border text-slate-200 font-mono text-xs rounded-xl transition flex items-center gap-2">
             <i data-lucide="github" class="w-4 h-4 text-cyber-neonPurple"></i> GitHub Repos
           </a>
         </div>
@@ -442,7 +371,7 @@
             <span class="text-xs font-mono text-cyber-neonPurple font-bold">FASE 04</span>
             <h3 class="text-base font-bold text-white mt-1">Remediation &amp; SLA Tracking</h3>
             <p class="text-xs text-slate-400 mt-2">
-              Asignación a equipos de infraestructura/desarrollo, seguimiento de acuerdos SLA (Critical: 7d, High: 30d) y rescaneo de verificación.
+              Asignación a equipos de infraestructura/desarrollo, seguimiento de acuerdos SLA (Critical: 7d, High: 21d, Medium: 45d) y rescaneo de verificación.
             </p>
           </div>
         </div>
@@ -552,7 +481,7 @@
           <span>&gt;</span>
           <span>DEVSECOPS &amp; TOOLING</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Automatización, Scripting &amp; SecOps Pipeling</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Automatización, Scripting &amp; SecOps Pipelines</h1>
         <p class="text-slate-400 text-base mt-2 max-w-3xl">
           Reducción radical de carga operativa manual. Scripts orientados a parsear datasets de vulnerabilidades, integrar APIs de seguridad y generar telemetría analítica.
         </p>
@@ -736,10 +665,10 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
           <!-- LLM03 -->
           <div class="bg-cyber-card p-5 rounded-xl border border-cyber-border space-y-2">
             <div class="flex justify-between items-center">
-              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM03:2025</span>
+              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM04:2025</span>
               <span class="text-[10px] bg-red-950/60 text-red-300 border border-red-800 px-1.5 py-0.5 rounded">Integridad</span>
             </div>
-            <h4 class="text-white font-bold text-sm">Training Data Poisoning</h4>
+            <h4 class="text-white font-bold text-sm">Data &amp; Model Poisoning</h4>
             <p class="text-xs text-slate-400 leading-relaxed">
               Alteración intencionada de la data con la que se fine-tunean modelos corporativos para crear puertas traseras lógicas (backdoors).
             </p>
@@ -751,7 +680,7 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
           <!-- LLM04 -->
           <div class="bg-cyber-card p-5 rounded-xl border border-cyber-border space-y-2">
             <div class="flex justify-between items-center">
-              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM08:2025</span>
+              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM06:2025</span>
               <span class="text-[10px] bg-purple-950/60 text-purple-300 border border-purple-800 px-1.5 py-0.5 rounded">Agentes</span>
             </div>
             <h4 class="text-white font-bold text-sm">Excessive Agency / Acceso Excesivo</h4>
@@ -766,10 +695,10 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
           <!-- LLM05 -->
           <div class="bg-cyber-card p-5 rounded-xl border border-cyber-border space-y-2">
             <div class="flex justify-between items-center">
-              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM05:2025</span>
+              <span class="font-mono text-xs text-cyber-neonPurple font-bold">LLM03:2025</span>
               <span class="text-[10px] bg-blue-950/60 text-blue-300 border border-blue-800 px-1.5 py-0.5 rounded">Supply Chain</span>
             </div>
-            <h4 class="text-white font-bold text-sm">Supply Chain Vulnerabilities en ML</h4>
+            <h4 class="text-white font-bold text-sm">Supply Chain (modelos y dependencias ML)</h4>
             <p class="text-xs text-slate-400 leading-relaxed">
               Uso de modelos pre-entrenados de repositorios públicos (ej: Hugging Face) que contengan pickle exploits o serializaciones arbitrarias de código.
             </p>
@@ -841,6 +770,7 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
         <a href="#vuln-mgmt" class="hover:text-cyber-neonPurple transition">Vulnerabilidades</a>
         <a href="#automation" class="hover:text-cyber-neonPurple transition">Automatización</a>
         <a href="#secai" class="hover:text-cyber-neonPurple transition">SecAI</a>
+        <a href="conceptos/" class="hover:text-cyber-neonPurple transition">Conceptos</a>
       </div>
       <div>
         <span>HOSTED ON GITHUB PAGES [0$ TIER]</span>
@@ -850,6 +780,23 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
 
   <!-- SCRIPT SPA ROUTER & INTERACCIONES CYBERPUNK -->
   <script>
+    // -------------------------------------------------------------
+    // DATOS DE PERFIL — completa estos valores y los botones aparecen solos.
+    // Si un valor queda vacío, su botón se oculta (evita enlaces rotos).
+    // -------------------------------------------------------------
+    const PROFILE = {
+      email: '',        // ej: 'nombre@dominio.com'
+      linkedin: '',     // ej: 'https://www.linkedin.com/in/tu-perfil'
+      github: 'https://github.com/GGKT0R',
+      cv: ''            // ej: 'CV_GGKTOR.pdf' (sube el PDF a la raíz del repo)
+    };
+    document.querySelectorAll('[data-profile]').forEach(el => {
+      const key = el.dataset.profile;
+      const val = PROFILE[key];
+      if (!val) { el.remove(); return; }
+      el.href = key === 'email' ? `mailto:${val}` : val;
+    });
+
     // Inicializar iconos Lucide
     lucide.createIcons();
 
@@ -949,7 +896,7 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
 
         switch (cmd) {
           case 'help':
-            respLine.innerHTML = "Comandos disponibles: <br>- <b>skills</b>: Lista de herramientas de seguridad<br>- <b>vulns</b>: Ir a Vulnerability Management<br>- <b>auto</b>: Ir a Automatización<br>- <b>secai</b>: Ir a Seguridad en IA<br>- <b>clear</b>: Limpiar terminal";
+            respLine.innerHTML = "Comandos disponibles: <br>- <b>skills</b>: Lista de herramientas de seguridad<br>- <b>vulns</b>: Ir a Vulnerability Management<br>- <b>auto</b>: Ir a Automatización<br>- <b>secai</b>: Ir a Seguridad en IA<br>- <b>concepts</b>: Abrir la base de conocimiento<br>- <b>whoami</b>: Perfil<br>- <b>github</b> / <b>contact</b> / <b>cv</b>: Enlaces<br>- <b>clear</b>: Limpiar terminal";
             break;
           case 'skills':
             respLine.textContent = "Stack: Nessus, Qualys, CrowdStrike, Python, Pandas, OWASP LLM Top 10, Hardening Linux/Win, Bash.";
@@ -965,6 +912,25 @@ echo <span class="text-emerald-300">"[*] Checking SSH Protocol configuration..."
           case 'secai':
             window.location.hash = '#secai';
             respLine.textContent = "Navegando al módulo de Seguridad en Inteligencia Artificial (SecAI)...";
+            break;
+          case 'concepts':
+          case 'conceptos':
+            respLine.textContent = "Abriendo la base de conocimiento...";
+            setTimeout(() => { window.location.href = 'conceptos/'; }, 400);
+            break;
+          case 'whoami':
+            respLine.textContent = "GGKTOR — SecOps & SecAI Engineer. Vulnerability Management, automatización defensiva y seguridad en IA. Chile.";
+            break;
+          case 'github':
+            window.open(PROFILE.github, '_blank', 'noopener');
+            respLine.textContent = `Abriendo ${PROFILE.github}`;
+            break;
+          case 'contact':
+            respLine.textContent = PROFILE.email ? `Correo: ${PROFILE.email}` : (PROFILE.linkedin ? `LinkedIn: ${PROFILE.linkedin}` : `GitHub: ${PROFILE.github}`);
+            break;
+          case 'cv':
+            if (PROFILE.cv) { window.open(PROFILE.cv, '_blank', 'noopener'); respLine.textContent = 'Abriendo CV...'; }
+            else { respLine.textContent = 'CV aún no publicado.'; }
             break;
           case 'clear':
             cliOutput.innerHTML = '';

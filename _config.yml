@@ -1,0 +1,30 @@
+# Configuración Jekyll para GitHub Pages
+title: "GGKTOR // CyberSecurity & SecAI Engineer"
+description: "Vulnerability Management, automatización SecOps y Seguridad en IA (SecAI)."
+url: "https://ggkt0r.github.io"
+baseurl: "/GGKT0R"
+lang: es
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-sitemap
+
+collections:
+  conceptos:
+    output: true
+    permalink: /conceptos/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: conceptos
+    values:
+      layout: concepto
+
+exclude:
+  - README.md
+  - PLANTILLA_CONCEPTO.md

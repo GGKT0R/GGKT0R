@@ -1,0 +1,40 @@
+---
+layout: base
+---
+<article class="max-w-3xl mx-auto">
+  <a href="{{ '/conceptos/' | relative_url }}" class="inline-flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-cyber-neonPurple transition mb-8">
+    <i data-lucide="arrow-left" class="w-4 h-4"></i> cd ../conceptos
+  </a>
+
+  <header class="border-b border-cyber-border pb-8 mb-8">
+    <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-cyber-neonPurple mb-3">
+      <span class="px-2 py-0.5 rounded bg-cyber-deepPurple text-cyber-neonPurple font-bold uppercase">{{ page.categoria }}</span>
+      {% if page.nivel %}<span class="text-slate-500">&gt;</span><span class="text-slate-400 uppercase">{{ page.nivel }}</span>{% endif %}
+      {% if page.fecha %}<span class="text-slate-500">&gt;</span><time class="text-slate-400" datetime="{{ page.fecha | date_to_xmlschema }}">{{ page.fecha | date: '%Y-%m-%d' }}</time>{% endif %}
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">{{ page.title }}</h1>
+    {% if page.resumen %}<p class="text-slate-400 text-base mt-3">{{ page.resumen }}</p>{% endif %}
+    {% if page.tags %}
+    <div class="flex flex-wrap gap-2 mt-4">
+      {% for t in page.tags %}<span class="px-2.5 py-1 bg-cyber-card border border-cyber-border text-slate-300 font-mono text-xs rounded">#{{ t }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="prose-cyber">
+    {{ content }}
+  </div>
+
+  {% if page.referencias %}
+  <section class="mt-12 bg-cyber-card border border-cyber-border rounded-2xl p-6 corner-bracket">
+    <h2 class="font-mono text-sm font-bold text-white flex items-center gap-2 mb-4">
+      <i data-lucide="link" class="w-4 h-4 text-cyber-neonPurple"></i> Referencias
+    </h2>
+    <ul class="space-y-2 text-sm">
+      {% for r in page.referencias %}
+      <li class="flex items-start gap-2"><span class="text-cyber-neonPurple font-mono">&gt;</span><a href="{{ r.url }}" target="_blank" rel="noopener" class="text-slate-300 hover:text-cyber-neonPurple underline underline-offset-4">{{ r.titulo }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

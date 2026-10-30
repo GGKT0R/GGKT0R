@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% capture page_title %}{% if page.title %}{{ page.title }} // GGKTOR{% else %}{{ site.title }}{% endif %}{% endcapture %}
+  {% capture page_desc %}{{ page.resumen | default: page.description | default: site.description | strip_html | strip_newlines }}{% endcapture %}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_desc | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta name="theme-color" content="#040308">
+  <meta property="og:type" content="{% if page.collection == 'conceptos' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_desc | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="{{ '/assets/js/tw-config.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="bg-cyber-black text-slate-200 font-sans min-h-screen flex flex-col relative overflow-x-hidden">
+  <div class="cyber-scanline"></div>
+
+  <header class="w-full bg-cyber-black/80 backdrop-blur-lg border-b border-cyber-border/80 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+      <a href="{{ '/' | relative_url }}" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-cyber-card border border-cyber-purpleCore/60 flex items-center justify-center shadow-neon-purple group-hover:border-cyber-neonPurple transition-colors">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-cyber-neonPurple"></i>
+        </div>
+        <div>
+          <span class="font-mono font-extrabold text-lg text-white tracking-wider">GGKTOR<span class="text-cyber-neonPurple animate-pulse">_</span></span>
+          <span class="text-[10px] font-mono text-slate-400 block -mt-1 tracking-widest uppercase">Knowledge Base</span>
+        </div>
+      </a>
+      <nav class="flex items-center gap-1 bg-cyber-surface/70 p-1.5 rounded-xl border border-cyber-border font-mono text-xs">
+        <a href="{{ '/' | relative_url }}" class="px-3 sm:px-4 py-2 rounded-lg text-slate-400 hover:text-white transition flex items-center gap-2">
+          <i data-lucide="terminal" class="w-3.5 h-3.5"></i><span class="hidden sm:inline">Portafolio</span>
+        </a>
+        <a href="{{ '/conceptos/' | relative_url }}" class="px-3 sm:px-4 py-2 rounded-lg bg-cyber-purpleCore text-white shadow-neon-purple flex items-center gap-2">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>Conceptos
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 relative">
+    {{ content }}
+  </main>
+
+  <footer class="w-full bg-cyber-surface/90 border-t border-cyber-border mt-16 py-8 px-6 font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span class="text-slate-400">GGKTOR // SECPORTFOLIO &copy; {{ site.time | date: '%Y' }}</span>
+      <div class="flex items-center gap-6">
+        <a href="{{ '/' | relative_url }}" class="hover:text-cyber-neonPurple transition">Portafolio</a>
+        <a href="{{ '/conceptos/' | relative_url }}" class="hover:text-cyber-neonPurple transition">Conceptos</a>
+        <a href="https://github.com/GGKT0R" target="_blank" rel="noopener" class="hover:text-cyber-neonPurple transition">GitHub</a>
+      </div>
+      <span>HOSTED ON GITHUB PAGES [0$ TIER]</span>
+    </div>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
